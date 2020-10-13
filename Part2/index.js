@@ -1,13 +1,10 @@
-console.log("The house always wins!")
+let id = document.getElementById("idInput")
+let color = document.getElementById("colorInput")
 
-const idInput = document.getElementById("idInput")
-const colorInput = document.getElementById("colorInput")
-
-console.log(idInput)
-console.log(colorInput)
+console.log(id)
+console.log(color)
 
 function setCard () {
-    const card = document.getElementById(idInput.value)
-    card.style.color = colorInput.value
-    console.log(card)
+    const card = document.getElementById(id.value)
+    card.style.color = color.value
 }

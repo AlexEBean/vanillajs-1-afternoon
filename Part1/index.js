@@ -1,8 +1,15 @@
-const board = []
+let board = []
 
 function play (clickedId) {
     let playerSpan = document.getElementById("player")
     let clickedElement = document.getElementById(clickedId)
+
+    function resetGame () {
+        for (let i=0; i<= 8; i++) {
+            let reset = document.getElementById(i)
+            reset.innerText = ""
+        }
+    }
 
     if (playerSpan.innerText === "X") {
         playerSpan.innerText = "O"
@@ -27,34 +34,42 @@ function play (clickedId) {
 
     if (topLeft !== undefined && topLeft === topCenter && topLeft === topRight) {
         alert(`${topLeft} is the winner`)
+        resetGame()
     }
   
     if (topLeft !== undefined && topLeft === middleLeft && topLeft === bottomLeft) {
         alert(`${topLeft} is the winner`)
+        resetGame()
     }
 
     if (topLeft !== undefined && topLeft === middleCenter && topLeft === bottomRight) {
         alert(`${topLeft} is the winner`)
+        resetGame()
     }
 
     if (topCenter !== undefined && topCenter === middleCenter && topCenter === bottomCenter) {
         alert(`${topCenter} is the winner`)
+        resetGame()
     }
 
     if (topRight !== undefined && topRight === middleRight && topRight === bottomRight) {
         alert(`${topRight} is the winner`)
+        resetGame()
     }
 
     if (topRight !== undefined && topRight === middleCenter && topRight === bottomLeft) {
         alert(`${topRight} is the winner`)
+        resetGame()
     }
 
     if (middleLeft !== undefined && middleLeft === middleCenter && middleLeft === middleRight) {
         alert(`${middleLeft} is the winner`)
+        resetGame()
     }
 
     if (bottomLeft !== undefined && bottomLeft === bottomCenter && bottomLeft === bottomRight) {
         alert(`${bottomLeft} is the winner`)
+        resetGame()
     }
 
     let boardFull = true
@@ -65,11 +80,7 @@ function play (clickedId) {
     }
     if (boardFull === true) {
         alert("It's a cat's game")
+        resetGame()
     }
-
-    function blackDiamond () {
-          if (boardFull === true || alert()) {
-            board[i] = undefined
-      }
-    }
+  
 }
